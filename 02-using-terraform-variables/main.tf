@@ -1,9 +1,3 @@
-
-
-
-
-
-
 resource "azurerm_resource_group" "terraform_resource_group" {
   name     = var.project_name
   location = var.azure_region
