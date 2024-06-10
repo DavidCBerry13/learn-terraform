@@ -27,7 +27,7 @@ The `terraform` block is the first configuration block specified in a file and h
 
 A sample `terraform` configuration block is shown below.
 
-```json
+```terraform
 terraform {
     required_version = ">= 1.8.5"
     required_providers {
