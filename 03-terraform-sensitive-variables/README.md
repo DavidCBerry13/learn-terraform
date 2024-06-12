@@ -23,6 +23,7 @@ variable "db_password" {
 Marking the variable as sensitve will
 
 - Prevent Terraform from printing its value out in the console
+- Redact these values in log files
 - Prevent Terraform from outputing this value
 
 However, the sensitve values will still appear in the `.tfstate` file as they are conidered part of the configuration.  As such, it is important to not check the `tfstate` file into source control and make sure to keep it secure.
@@ -32,6 +33,7 @@ However, the sensitve values will still appear in the `.tfstate` file as they ar
 There are multiple ways to pass variable values into your Terraform project during the *apply* phase.
 
 - By default, Terraform will read files with the names of `terraform.tfvars` or `*.auto.tfvars`
+- Terraform will also look for any environment variables in the format of `TF_VAR_<variable_name>` and use those as input values
 - You can pass a variable on the command line with the `-var` switch, for example `-var azure-region=centralus`
 - You can pass a variable file using the `-var-file` switch, for example `-var-file secrets.tfvars`
 
@@ -48,3 +50,9 @@ If you are running `terraform plan`, you must also inclde the `secrets.tfvars` f
 ```bash
 terraform plan -var-file secrets.tfvars
 ```
+
+## Outputing Sensitive Values
+
+You can also mark output values with `sensitive = true`.  This is useful in scenarios where you have auto-generated a password with the `random` function and then need to capture its value as output.  
+
+When an output variable is marked as sensitive, it will be redacted from console output.  It will also be redacted when running the `terraform output` command.  However, if you run `terraform output <variable-name>`, then you can view the value.
