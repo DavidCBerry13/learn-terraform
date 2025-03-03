@@ -26,6 +26,10 @@ A small Terraform project may only contain a single `main.tf` file.  However, mo
 | `terraform apply`   | Applies (executes) a Terraform configuration.  This is when the resources actually get created or modified (for example creating resources in Azure or AWS) | [Docs](https://developer.hashicorp.com/terraform/cli/commands/apply) |
 | `terraform destroy` | Removes the resources specified in the Terraform configuration.  This command is called to clean up and remove the resources when you are done.  This is important with cloud resources where you are incurring costs by having the resources running | [Docs](https://developer.hashicorp.com/terraform/cli/commands/destroy) |
 
+## Reverse Engineering Existing Infrastructure to Terraform
+
+The [Terraformer](https://github.com/GoogleCloudPlatform/terraformer?tab=readme-ov-file) tool can be used to reverse engineer existing infrastructure into TerraForm files.
+
 ## Resources
 
 - [Beginners Tutorial to Terraform with Azure](https://www.youtube.com/watch?v=gyZdCzdkSY4)
