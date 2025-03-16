@@ -33,4 +33,5 @@ The [Terraformer](https://github.com/GoogleCloudPlatform/terraformer?tab=readme-
 ## Resources
 
 - [Beginners Tutorial to Terraform with Azure](https://www.youtube.com/watch?v=gyZdCzdkSY4)
+- [HashiCorp Terraform Tutorials](https://developer.hashicorp.com/terraform/tutorials)
 - [Best Practices for using Terraform - Google Cloud](https://cloud.google.com/docs/terraform/best-practices-for-terraform)
