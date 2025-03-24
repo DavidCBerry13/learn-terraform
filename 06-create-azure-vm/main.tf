@@ -10,6 +10,19 @@ data "azurerm_platform_image" "vm_image" {
   sku       = "server"
 }
 
+data "cloudinit_config" "config" {
+  gzip          = true
+  base64_encode = true
+
+  part {
+    filename     = "cloud-config.yaml"
+    content_type = "text/cloud-config"
+
+    content = file("${path.module}/cloud-init-config/cloud-config.yaml")
+  }
+}
+
+
 resource "azurerm_virtual_network" "virtual_network" {
   name                = "vnet-${var.project_name}"
   address_space       = ["10.0.0.0/16"]
@@ -71,4 +84,7 @@ resource "azurerm_linux_virtual_machine" "virtual_machine" {
     sku       = data.azurerm_platform_image.vm_image.sku
     version   = data.azurerm_platform_image.vm_image.version
   }
+
+  custom_data = data.cloudinit_config.config.rendered
+
 }
