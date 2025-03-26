@@ -70,7 +70,6 @@ resource "azurerm_linux_virtual_machine" "virtual_machine" {
   admin_ssh_key {
     username   = "vmadmin"
     public_key = file(var.ssh_key_path)
-    //public_key = file("C:/Users/dberr/.ssh/id_rsa.pub")
   }
 
   os_disk {
