@@ -71,7 +71,7 @@ resource "azurerm_resource_group" "terraform_resource_group" {
 }
 ```
 
-Variables can also be used as part of an expression using a `${}` syntax inside of double quotes.  In the resource definition below, the name of the App Service Plan is contructed from combining  a prefix (`pln-`) with the name of the project-name from a variable.  The full string is `pln-${var.project_name}`
+Variables can also be used as part of an expression using a `${}` syntax inside of double quotes.  In the resource definition below, the name of the App Service Plan is constructed from combining  a prefix (`pln-`) with the name of the project-name from a variable.  The full string is `pln-${var.project_name}`
 
 ```hcl
 resource "azurerm_service_plan" "terraform_app_service_plan" {
@@ -103,4 +103,4 @@ azure_region = "eastus2"
 
 ## Outputs
 
-The file `outputs.tf` defines values you want to output from your configuration.  Sometimes when resources are created, you need to output those values so you can see them.  In this case, I am outputing the default_hostname from the webapp for I know what the URL of the site that was just created was.
+The file `outputs.tf` defines values you want to output from your configuration.  Sometimes when resources are created, you need to output those values so you can see them.  In this case, I output the default_hostname from the webapp for I know what the URL of the site that was just created was.

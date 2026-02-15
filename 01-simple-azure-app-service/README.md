@@ -43,7 +43,7 @@ The `required_version` parameter in this config block specifies that you must be
 
 The `required_providers` block tells Terraform the [`azurerm`](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) provider is required for this Terraform project.  It gives the location in the Terraform registry and specifies version 3.107.  The `~>` pins this provider to the *minor* version.  That is, it will allow patch level updates (e.g.3.107.1) but not updates to the major or minor version.
 
-Hashicorp strongly reccomends that you specify versions for your Terrafrom projects as providers and Terraform itself change over time.  Specifying versions helps make sure your projects continue to work even as providers are updated.
+Hashicorp strongly recommends that you specify versions for your Terraform projects as providers and Terraform itself change over time.  Specifying versions helps make sure your projects continue to work even as providers are updated.
 
 ### `providers` block
 

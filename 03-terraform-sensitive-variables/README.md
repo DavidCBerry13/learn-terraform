@@ -1,11 +1,11 @@
 # 03 - More Complex App
 
-This example represents a more complex app-a web app and a database togehter.  This introduces a couple of new concepts:
+This example represents a more complex app-a web app and a database together.  This introduces a couple of new concepts:
 
 - We need to set a username and password for the database.  These need to be treated as application secrets
 - We need to give the web app the connection string for the database
 
-In a future example, I will use a managed identity which is a more secure way to access a database from a web app.  But for this example, I am using a username password combo as this demonstrates some important conepts in Terraform.
+In a future example, I will use a managed identity which is a more secure way to access a database from a web app.  But for this example, I am using a username password combo as this demonstrates some important concepts in Terraform.
 
 ## Variables Containing Sensitive Data
 
@@ -26,9 +26,9 @@ Marking the variable as sensitve will
 - Redact these values in log files
 - Prevent Terraform from outputing this value
 
-However, the sensitve values will still appear in the `.tfstate` file as they are conidered part of the configuration.  As such, it is important to not check the `tfstate` file into source control and make sure to keep it secure.
+However, the sensitve values will still appear in the `.tfstate` file as they are considered part of the configuration.  As such, it is important to not check the `tfstate` file into source control and make sure to keep it secure.
 
-## Passing Variables to Terrafom
+## Passing Variables to Terraform
 
 There are multiple ways to pass variable values into your Terraform project during the *apply* phase.
 
